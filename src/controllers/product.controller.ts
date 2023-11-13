@@ -1,7 +1,8 @@
 import { Request, Response, json } from 'express';
 import mongoose from 'mongoose';
-import { ProductModel} from '../models/ind.model'
-import { busoProducts } from '../data-Product/buso'
+import { ProductModel} from '../models/indumentaria.model'
+import {busoProducts } from '../data-Product/buso'
+
 
 
 export const create = ((req:Request,res:Response) => {
@@ -38,7 +39,6 @@ export const listing = ( async (req:Request,res:Response) => {
       const product = await  ProductModel.find();
       console.log("ok")
       return res.status(200).json(product) 
-      
 
       }catch (error) {
         console.log("eror")
@@ -46,15 +46,23 @@ export const listing = ( async (req:Request,res:Response) => {
       }
   });
 
-  ///revisar NO anda
-  export const remove = async (req: Request, res: Response) => {
+  export const remove = (async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
       // Encuentra el producto en la base de datos y elimínalo
-      await ProductModel.findByIdAndRemove(id);
+      const deletedProductBase = await ProductModel.findOneAndDelete({ _id: id });
   
-      return res.status(200).json({ msg: "Producto eliminado exitosamente" });
+      if (deletedProductBase) {
+        console.log("Producto interno a eliminar manunalmente ",{ deletedProductBase })
+        return res.status(200).json({ msg: "Producto eliminado exitosamente en la base de datos", deletedProductBase });
+      } else {
+        return res.status(404).json({ msg: "Producto no encontrado" });
+      }
     } catch (error) {
-      return res.status(400).json({ msg: "Error al eliminar un producto", error });
+      console.error(error);
+      return res.status(400).json({ msg: "Error al eliminar un producto"});
     }
-  };
+  });
+
+
+  
