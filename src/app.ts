@@ -1,7 +1,7 @@
 import express  from 'express';
 import morgan from 'morgan';
 import cors from 'cors' 
-import router from './routes/CreateProduct.routes'
+import {remerasRouter,busosRouter,camperasRouter,pantalonesRouter} from './routes/CreateProduct.routes'
 import mongoose from 'mongoose';
 
 //inicial
@@ -31,6 +31,9 @@ app.get('/',(req,res) => {
 })
 
 
-app.use('/products',router);
+app.use('/', remerasRouter);
+app.use('/', busosRouter);
+app.use('/', camperasRouter);
+app.use('/', pantalonesRouter);
 
 export default app 
