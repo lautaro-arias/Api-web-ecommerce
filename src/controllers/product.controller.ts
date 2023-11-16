@@ -62,6 +62,7 @@ export const add = async (req: Request, res: Response) => {
       }
       // Busca y devuelve la lista de productos para el modelo seleccionado
       const products = await selectedModel.find();
+      console.log()
       return res.status(200).json(products);
     } catch (error) {
       console.error(error);
@@ -114,7 +115,7 @@ export const add = async (req: Request, res: Response) => {
       const { modelName,id } = req.params;
 
       //Datos a actualizar
-      const {tipo,nombre,img,marca,talle,precio,number,color,descripcion} = req.body;
+      const {tipo,nombre,img,marca,talle,precio,rebaja,number,color,descripcion} = req.body;
 
       // Según el parámetro recibido, selecciona el modelo correspondiente
       let selectedModel;
@@ -135,7 +136,7 @@ export const add = async (req: Request, res: Response) => {
         default:
           return res.status(400).json({ msg: 'Modelo no válido' });
       }
-      await selectedModel.findByIdAndUpdate(id,{tipo,nombre,img,marca,talle,precio,number,color,descripcion});
+      await selectedModel.findByIdAndUpdate(id,{tipo,nombre,img,marca,talle,precio,rebaja,number,color,descripcion});
           
       return res.status(200).json({ msg: 'Cambios realizados' });
     } catch (error) {

@@ -5,6 +5,7 @@ export interface Product {
     marca       :   string,
     talle       :   string,
     precio      :   number,
+    rebaja      :   number,
     color       :   string,
     descripcion :   string,
     id          :   string,
