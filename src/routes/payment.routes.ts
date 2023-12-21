@@ -1,10 +1,9 @@
-import { payment } from '../controllers/payment.controller';
+import { payment,data } from '../controllers/payment.controller';
 import  { Router } from 'express';
 
 const paymentRouter = Router()
 
 paymentRouter.post('/create-order',payment)
-paymentRouter.get('/success',(req,res) => res.send('order-success'))
-paymentRouter.get('/webhook',(req,res) => res.send('webhook'))
+paymentRouter.get('/data-order',data)
 
-export { paymentRouter }
+export { paymentRouter,data }
