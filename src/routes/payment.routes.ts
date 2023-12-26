@@ -4,6 +4,6 @@ import  { Router } from 'express';
 const paymentRouter = Router()
 
 paymentRouter.post('/create-order',payment)
-paymentRouter.get('/data-order',data)
+paymentRouter.get('/feedback',data)
 
 export { paymentRouter,data }
