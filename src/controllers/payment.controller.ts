@@ -2,7 +2,7 @@ import  { MercadoPagoConfig, Preference } from 'mercadopago';
 import { Request, Response, json } from 'express';
 
 const client =  new MercadoPagoConfig({  
-  accessToken: 'TEST-7671113606844887-121907-4b453e26fe332f118153e22a75818419-1599227887',
+  accessToken: 'TEST-4887671877778630-121906-473c4ba4a98b236d39ad3bca9fd1dad7-338813628',
   options: { timeout: 5000 } 
 });//TESTUSER903620105
 
