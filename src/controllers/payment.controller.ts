@@ -32,8 +32,6 @@ export const payment = async (req: Request, res: Response) => {
     const response = await preference.create({ body: preferenceData });
     console.log(response)
     return res.status(200).json( response );
-    //console.log('ID de la preferencia:', response.body.id);
-    // Haz algo con la respuesta, por ejemplo, establecerla en el estado
   } catch (error) {
     console.error('Error al procesar el pago:', error);
     return res.status(400).json({ msg: 'Error al procesar pago', error });
