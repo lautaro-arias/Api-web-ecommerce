@@ -1,19 +1,9 @@
 import  { MercadoPagoConfig, Preference } from 'mercadopago';
 import { Request, Response, json } from 'express';
 
-//revisar Archivo ENV
-import dotenv from 'dotenv'
-dotenv.config()
-
-const token = process.env.TOKEN;
-
-if (!token) {
-  throw new Error('El token de MercadoPago no está definido en las variables de entorno.');
-}
-
 // Configura el cliente de MercadoPago
 const client = new MercadoPagoConfig({
-  accessToken: token,
+  accessToken:'TEST-4887671877778630-121906-473c4ba4a98b236d39ad3bca9fd1dad7-338813628',
   options: { timeout: 5000 }
 });
 
