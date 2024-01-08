@@ -21,7 +21,6 @@ const corsOptions = {
 //
 
 //middlewares
-
 app.use(express.static('public', {
     maxAge: '1d', // Duración máxima de caché para los archivos estáticos 
 }));
@@ -33,7 +32,7 @@ app.use(express.json());
 //routes 
 app.get('/',(req,res) => {
     res.send(`Estamos en el puerto ${app.get('port')}`)
-})
+});
 
 app.use('/',paymentRouter);
 app.use('/', remerasRouter);
@@ -41,4 +40,4 @@ app.use('/', busosRouter);
 app.use('/', camperasRouter);
 app.use('/', pantalonesRouter);
 
-export default app 
+export default app ;

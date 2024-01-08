@@ -1,5 +1,5 @@
 import  { Router } from 'express';
-import  { add,listing,update,remove } from '../controllers/product.controller'
+import  { add,listing,update,remove } from '../controllers/product.controller';
 
 const remerasRouter = Router();
 remerasRouter.post('/:modelName/add', add);

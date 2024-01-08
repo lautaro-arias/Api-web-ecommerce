@@ -7,9 +7,9 @@ const connection = mongoose.connection;
 
 connection.once('open',() => {
     console.log('Mongodb connection ko')
-})
+});
 
 connection.on('error',err => {
     console.log(err)
     process.exit(0)
-})
+});

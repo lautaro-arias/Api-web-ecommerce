@@ -13,7 +13,7 @@ export const RemeraModel = mongoose.model('Products-remeras',new Schema<Product>
     color       :   { type  :   String,required :   true} , 
     descripcion :   { type  :   String,required :   true} , 
     id          :   { type  :   String,required :   true} ,
-}))
+}));
 export const BusoModel = mongoose.model('Products-busos',new Schema<Product> ({
     tipo        :   { type  :   String,required :   true} ,
     nombre      :   { type  :   String,required :   true} , 
@@ -25,7 +25,7 @@ export const BusoModel = mongoose.model('Products-busos',new Schema<Product> ({
     color       :   { type  :   String,required :   true} , 
     descripcion :   { type  :   String,required :   true} , 
     id          :   { type  :   String,required :   true} ,
-}))
+}));
 export const PantalonModel = mongoose.model('Products-pantalones',new Schema<Product> ({
     tipo        :   { type  :   String,required :   true} ,
     nombre      :   { type  :   String,required :   true} , 
@@ -37,7 +37,7 @@ export const PantalonModel = mongoose.model('Products-pantalones',new Schema<Pro
     color       :   { type  :   String,required :   true} , 
     descripcion :   { type  :   String,required :   true} , 
     id          :   { type  :   String,required :   true} ,
-}))
+}));
 export const CamperaModel = mongoose.model('Products-camperas',new Schema<Product> ({
     tipo        :   { type  :   String,required :   true} ,
     nombre      :   { type  :   String,required :   true} , 
@@ -49,4 +49,4 @@ export const CamperaModel = mongoose.model('Products-camperas',new Schema<Produc
     color       :   { type  :   String,required :   true} , 
     descripcion :   { type  :   String,required :   true} , 
     id          :   { type  :   String,required :   true} ,
-}))
+}));

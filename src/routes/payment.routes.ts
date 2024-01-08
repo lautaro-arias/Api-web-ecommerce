@@ -6,4 +6,4 @@ const paymentRouter = Router()
 paymentRouter.post('/create-order',payment)
 paymentRouter.get('/feedback',data)
 
-export { paymentRouter,data }
+export { paymentRouter,data };
