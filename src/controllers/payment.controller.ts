@@ -3,7 +3,7 @@ import { Request, Response, json } from 'express';
 
 // Configura el cliente de MercadoPago
 const client = new MercadoPagoConfig({
-  accessToken:'TEST-4887671877778630-121906-473c4ba4a98b236d39ad3bca9fd1dad7-338813628',
+  accessToken:'.env',
   options: { timeout: 5000 }
 });
 
