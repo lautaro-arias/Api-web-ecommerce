@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.data = exports.paymentRouter = void 0;
+const payment_controller_1 = require("../controllers/payment.controller");
+Object.defineProperty(exports, "data", { enumerable: true, get: function () { return payment_controller_1.data; } });
+const express_1 = require("express");
+const paymentRouter = (0, express_1.Router)();
+exports.paymentRouter = paymentRouter;
+paymentRouter.post('/create-order', payment_controller_1.payment);
+paymentRouter.get('/feedback', payment_controller_1.data);
