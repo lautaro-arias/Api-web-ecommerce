@@ -22,11 +22,6 @@ export const payment = async (req: Request, res: Response) => {
           quantity: Number(req.body.quantity),
         },
       ],
-      back_urls: {
-        success: 'http://localhost:4000/feedback',
-        failure: 'http://localhost:4000/feedback',
-        pending: 'http://localhost:4000/feedback',
-      },
       auto_return: 'approved',
     };
     // Crea la preferencia utilizando la instancia de Preference
